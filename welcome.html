@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome | Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #ff4e50, #f9d423, #24c6dc, #5433ff);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .logo {
+      font-size: 3em;
+      margin: 20px 0;
+      color: #ffecb3;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ffd700, 0 0 30px #ff8c00;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff;
+      }
+      to {
+        text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff1493;
+      }
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #e0f7fa;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: #fff;
+      background: #ff4081;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #ff4081;
+      transition: transform 0.2s, background 0.3s;
+      animation: bounce 2s infinite;
+    }
+
+    .btn:hover {
+      background: #e91e63;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #e91e63;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body class="welcome">
+  <div class="container">
+    <h1>Welcome to</h1>
+    <h2 class="logo">🎮 Tic Tac Toe 🎮</h2>
+    <p>Challenge your friend and see who wins!</p>
+    <a href="index.html" class="btn">▶ Start Game</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Over</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(120deg, #ff6ec4, #7873f5, #67d7e3);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .end-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #fff5;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .glow-title {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 0 0 10px #fffc, 0 0 20px #f0f, 0 0 30px #f0f;
+      margin-bottom: 10px;
+    }
+
+    #resultMessage {
+      font-size: 1.8em;
+      margin: 20px 0;
+      color: #ffd;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 25px;
+      background: #00c3ff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00c3ffcc;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff00cc;
+      box-shadow: 0 0 20px #ff00ccaa;
+      transform: scale(1.05);
+    }
+
+    .emoji {
+      font-size: 2.2em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="end-container">
+    <h1 class="glow-title">🎉 Game Over 🎉</h1>
+    <h2 id="resultMessage">Loading result...</h2>
+    <div class="emoji">🌟🎮🔥💥</div>
+
+    <div class="controls">
+      <a href="index.html" class="btn">🔁 Play Again</a>
+      <a href="welcome.html" class="btn">🏠 Home</a>
+    </div>
+  </div>
+
+  <script>
+    const result = localStorage.getItem("gameResult");
+    document.getElementById("resultMessage").textContent = result || "Oops! Something went wrong.";
+  </script>
+
+</body>
+</html>
+
